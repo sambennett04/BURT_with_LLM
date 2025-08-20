@@ -1,0 +1,24 @@
+.chat-window{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.response {
+    max-width: 70%;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: gray;
+}
+
+.response.user{
+    align-self: flex-end;
+    
+}
+
+.response.ai{
+    align-items: flex-start;
+    
+}

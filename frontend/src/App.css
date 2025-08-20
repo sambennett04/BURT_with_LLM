@@ -1,0 +1,50 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  
+}
+
+.main-div {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.interactive-window,
+.report-window {
+  flex: 1;                /* each takes 50% width */
+  padding: 1rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.interactive-window {
+  /*background-color: #f9f9f9;*/
+
+  justify-content: center;
+  
+  border-right: 1px solid #ccc;
+}
+
+.report-window-header{
+  text-decoration: underline;
+  /*background-color: #ffffff;*/
+}
+
+.report-window pre {
+  white-space: pre-wrap
+  
+}

@@ -1,0 +1,17 @@
+.dropdown-button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.5rem;
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}

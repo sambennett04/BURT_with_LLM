@@ -1,0 +1,14 @@
+.text-input{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    height:auto
+}
+
+.text-input textarea {
+    height: auto;
+    width: auto;
+    text-align: center;
+    padding: 5px;
+}
