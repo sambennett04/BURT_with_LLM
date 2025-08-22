@@ -1,0 +1,51 @@
+# BURT++: LLM Powered Chatbot for Interactive Bug Reporting on Web Applications
+
+## About
+This repo showcases the intial version of BURT++, a GP-o4-mini powerded chatbot for the interactive bug reporting of web applications. BURT++ aims to reduce the complexity of the bug reporting process for non-technical end users, guiding them to efficiently create high-quality bug reports through human-like conversation. It is a successor to BURT, which you can read more about here: https://ojcchar.github.io/files/23-icse23-burt-tool.pdf. I was awarded the Charles Center Summer 2025 research Grant to begin designing BURT++ and will continue its development with my team from the Software Evolution Analysis Lab throughout the 2025-2026 school year.
+
+### Conceptual Design
+
+BURT++ takes a user description of buggy app functionality as input and leverages application execution data to verify and transform the user provided bug description into a complete bug report through 4 stages.
+1. Intial User Description Enhancement: Burt++ grades the initial user bug description, looking for indications of the observed buggy app behavior, correct application behavior the user believes should replace the buggy behavior and high-level steps to reproduce the bug. Based on missed points in the initial grading, BURT++ works with the user through specfic feedback questions to add information to the initial bug report description so it can be efficiently used to generate a complete bug report. 
+2. Buggy Screen Localization: Burt++ compares the enhanced user bug description to application execution information represented as a graph (where app screens are represented as nodes and the GUI interactions leading from one screen to the other are represented as edges) to locate the top application screens that could contain the manifestation of the user's bug. The user is then asked to confirm one of the top application screens.
+3. Steps To Reproduce Generation: Burt++ uses LLM guided graph exploration to compile a complete path of graph transitions, from the app starting screen to the user confirmed buggy screen, which best matches the user's bug description. During path generation, generated steps are assigned  quality labels based on their presence in the original user bug description. This method is adapted from SEA Lab's AstroBR, which you can read about here: https://ojcchar.github.io/files/35-icpc25-astrobr.pdf. Once a path is generated, it is presented to the user in chunks. The user can use a simple annotation mechanism to confirm or deny steps in the path. Based on the user's annotations, a new path is generated. This cylce is repeated until all steps in the path are fully confirmed by the user or are deemed high-quality matches by the quality analyzer. 
+4. Observed Behavior / Expected Behavior Generation: Based on the set of Steps to Reproduce, the user's bug description, and simplified application execution data, BURT++ generates clear Observed Behavior and Expected Behavior through a pure prompting approach. 
+
+Since development is still in progress, below you will find V0 of BURT++, a simple full-stack application in which GPT-4o is presented with the user bug description, a experimentally refined set of graphical application execution data and a prompt which instructs the LLM to explore the application execution data and compile an application-accurate, structured bug report based on the user's bug descripton. This simple approach has already lead to higher quality bug reports, leading SEA lab to explore more pure prompting approaches for complete bug report generation. If you are interested, please take a look at my repo on GPT-BR: https://github.com/sambennett04/GPT-BR
+
+
+
+## Setup
+1. Create and Activate Virtual Enviornment Within Backend Directoy
+```sh
+cd Backend
+
+python3 -m venv venv
+
+#Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Linux/Mac
+python -m venv venv
+source venv/bin/activate
+```
+2. Install Required Python Packages
+```sh
+pip install requirements.txt
+```
+3. Start FastAPI Server
+```sh
+python3 main.py
+```
+4. Navigate to Frondtend Directory and Install NPM
+```sh
+cd BURT_with_LLM/frontend
+npm install
+```
+5. Start Frontend Local Host
+```sh
+npm run dev
+```
+
+## Example Execution
