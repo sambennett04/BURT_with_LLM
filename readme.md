@@ -1,7 +1,7 @@
 # BURT++: LLM Powered Chatbot for Interactive Bug Reporting on Web Applications
 
 ## About
-This repo showcases the intial version of BURT++, a OpenAI o4-mini powerded chatbot for the interactive bug reporting of web applications. BURT++ aims to reduce the complexity of the bug reporting process for non-technical end users, guiding them to efficiently create high-quality bug reports through human-like conversation. It is a successor to BURT, which you can read more about here: https://ojcchar.github.io/files/23-icse23-burt-tool.pdf. I was awarded the Charles Center Summer 2025 research Grant to begin designing BURT++ and will continue its development with my team from the Software Evolution Analysis Lab throughout the 2025-2026 school year.
+This repo showcases the intial version of BURT++, a OpenAI o4-mini powerded chatbot for the interactive bug reporting of web applications. BURT++ aims to reduce the complexity of the bug reporting process for non-technical end users, guiding them to efficiently create high-quality bug reports through human-like conversation. It is a successor to BURT, which you can read more about here: https://ojcchar.github.io/files/23-icse23-burt-tool.pdf. I began developing BURT++ in parallel with GPT-BR as part of my work for the 2025 Charles Center Summer Research Grant and will continue its development with my team from the Software Evolution Analysis Lab throughout the 2025-2026 school year.
 
 ### Conceptual Design
 
